@@ -81,7 +81,7 @@ const HeartNote = ({ data }) => {
                         transition={{ delay: 0.5 }}
                         style={{ fontSize: '14px', marginBottom: '8px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '2px' }}
                     >
-                        To: {data.receiver}
+                        ถึง: {data.receiver}
                     </motion.p>
                     <motion.h3
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -96,7 +96,7 @@ const HeartNote = ({ data }) => {
                         animate={{ opacity: 1 }}
                         transition={{ delay: 1 }}
                     >
-                        <p style={{ fontSize: '14px', marginTop: '20px', fontWeight: '600', opacity: 0.9 }}>With love, {data.sender}</p>
+                        <p style={{ fontSize: '14px', marginTop: '20px', fontWeight: '600', opacity: 0.9 }}>ด้วยรักจาก, {data.sender}</p>
                     </motion.div>
                 </div>
             </div>
@@ -115,9 +115,10 @@ const HeartNote = ({ data }) => {
                         boxShadow: '0 10px 25px rgba(0,0,0,0.1)'
                     }}
                 >
-                    <Download size={20} /> Save My Note
+                    <Download size={20} /> บันทึกโน้ตของฉัน
                 </button>
             </div>
+
         </motion.div>
     );
 };

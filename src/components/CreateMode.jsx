@@ -29,16 +29,16 @@ const CreateMode = () => {
                 <div style={{ display: 'inline-flex', padding: '16px', background: 'white', borderRadius: '50%', boxShadow: '0 8px 16px rgba(255, 77, 109, 0.2)', marginBottom: '16px' }}>
                     <Heart size={40} color="var(--vibrant-red)" fill="var(--vibrant-red)" />
                 </div>
-                <h1 style={{ fontSize: '28px', color: 'var(--deep-crimson)', fontWeight: '800', marginBottom: '8px' }}>Valentine's Love Note</h1>
-                <p style={{ color: '#666', fontSize: '15px' }}>Send a magical animated surprise to someone special <Sparkles size={14} style={{ display: 'inline' }} /></p>
+                <h1 style={{ fontSize: '28px', color: 'var(--deep-crimson)', fontWeight: '800', marginBottom: '8px' }}>จดหมายรักวาเลนไทน์</h1>
+                <p style={{ color: '#666', fontSize: '15px' }}>ส่งเซอร์ไพรส์สุดพิเศษให้กับคนที่คุณรัก <Sparkles size={14} style={{ display: 'inline' }} /></p>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <div className="input-group">
-                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: 'var(--deep-crimson)', fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>From</label>
+                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: 'var(--deep-crimson)', fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>จาก (ผู้ส่ง)</label>
                     <input
                         type="text"
-                        placeholder="Your lovely name"
+                        placeholder="ชื่อที่น่ารักของคุณ"
                         value={sender}
                         onChange={(e) => setSender(e.target.value)}
                         style={{ width: '100%', padding: '14px', borderRadius: '16px', border: '2px solid #eee', outline: 'none', transition: 'border-color 0.3s', fontSize: '16px' }}
@@ -48,10 +48,10 @@ const CreateMode = () => {
                 </div>
 
                 <div className="input-group">
-                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: 'var(--deep-crimson)', fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>To</label>
+                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: 'var(--deep-crimson)', fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>ถึง (ผู้รับ)</label>
                     <input
                         type="text"
-                        placeholder="Their name"
+                        placeholder="ชื่อของเขา/เธอ"
                         value={receiver}
                         onChange={(e) => setReceiver(e.target.value)}
                         style={{ width: '100%', padding: '14px', borderRadius: '16px', border: '2px solid #eee', outline: 'none', transition: 'border-color 0.3s', fontSize: '16px' }}
@@ -61,9 +61,9 @@ const CreateMode = () => {
                 </div>
 
                 <div className="input-group">
-                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: 'var(--deep-crimson)', fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Message</label>
+                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: 'var(--deep-crimson)', fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>ข้อความ</label>
                     <textarea
-                        placeholder="Write your heartfelt message here..."
+                        placeholder="เขียนข้อความจากใจที่นี่..."
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         style={{ width: '100%', padding: '14px', borderRadius: '16px', border: '2px solid #eee', outline: 'none', minHeight: '120px', resize: 'vertical', fontSize: '16px', transition: 'border-color 0.3s' }}
@@ -89,12 +89,12 @@ const CreateMode = () => {
                         cursor: isFormValid ? 'pointer' : 'not-allowed'
                     }}
                 >
-                    {copied ? 'Link Copied! ✨' : <><Copy size={20} /> Generate & Copy Link</>}
+                    {copied ? 'คัดลอกลิงก์แล้ว! ✨' : <><Copy size={20} /> สร้างและคัดลอกลิงก์</>}
                 </button>
 
                 {isFormValid && (
                     <div style={{ padding: '16px', background: 'rgba(255, 77, 109, 0.05)', borderRadius: '16px', border: '1px dashed var(--primary-pink)', fontSize: '12px', wordBreak: 'break-all', color: '#888' }}>
-                        <span style={{ fontWeight: '700', color: 'var(--vibrant-red)' }}>Ready!</span> Share this link: {shareLink}
+                        <span style={{ fontWeight: '700', color: 'var(--vibrant-red)' }}>พร้อมแล้ว!</span> ส่งลิงก์นี้ให้เขา: {shareLink}
                     </div>
                 )}
             </div>

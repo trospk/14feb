@@ -48,15 +48,15 @@ const ViewMode = ({ data }) => {
                             ></div>
                             <div className="envelope-body">
                                 <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 10, textAlign: 'center', width: '100%' }}>
-                                    <p style={{ fontSize: '12px', color: '#999', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '4px' }}>Special Delivery</p>
+                                    <p style={{ fontSize: '12px', color: '#999', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '4px' }}>ส่งมอบความรัก</p>
                                     <Heart size={24} color="#ff4d6d" fill="#ff4d6d" />
                                 </div>
                             </div>
 
                             {/* Address on the back/front of envelope */}
                             <div style={{ position: 'absolute', bottom: '-80px', left: '0', width: '100%', textAlign: 'center' }}>
-                                <p style={{ color: 'white', fontWeight: '600', textShadow: '0 2px 4px rgba(0,0,0,0.2)' }}>From: {data.sender}</p>
-                                <p style={{ color: 'white', fontWeight: '600', textShadow: '0 2px 4px rgba(0,0,0,0.2)' }}>To: {data.receiver}</p>
+                                <p style={{ color: 'white', fontWeight: '600', textShadow: '0 2px 4px rgba(0,0,0,0.2)' }}>จาก: {data.sender}</p>
+                                <p style={{ color: 'white', fontWeight: '600', textShadow: '0 2px 4px rgba(0,0,0,0.2)' }}>ถึง: {data.receiver}</p>
                             </div>
                         </div>
 
@@ -67,7 +67,7 @@ const ViewMode = ({ data }) => {
                                 transition={{ delay: 1, repeat: Infinity, repeatType: 'reverse' }}
                                 style={{ color: 'white', marginTop: '100px', fontWeight: '600' }}
                             >
-                                Tap the envelope to open
+                                แตะที่ซองจดหมายเพื่อเปิดดู
                             </motion.p>
                         )}
                     </motion.div>
