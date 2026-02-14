@@ -7,6 +7,7 @@ import './App.css'
 function App() {
   const [data, setData] = useState(null);
   const [params] = useState(new URLSearchParams(window.location.search));
+  const [hearts, setHearts] = useState([]);
 
   useEffect(() => {
     const encodedData = params.get('data');
@@ -16,37 +17,55 @@ function App() {
         setData(decoded);
       }
     }
+
+    // Generate floating hearts background
+    const newHearts = Array.from({ length: 20 }).map((_, i) => ({
+      id: i,
+      left: Math.random() * 100 + 'vw',
+      size: Math.random() * 20 + 10 + 'px',
+      duration: Math.random() * 5 + 10 + 's',
+      delay: Math.random() * 10 + 's'
+    }));
+    setHearts(newHearts);
   }, [params]);
 
   return (
     <div className="App">
+      {/* Floating Hearts Background */}
+      <div className="bg-hearts">
+        {hearts.map(heart => (
+          <div
+            key={heart.id}
+            className="heart-particle"
+            style={{
+              left: heart.left,
+              fontSize: heart.size,
+              animationDuration: heart.duration,
+              animationDelay: heart.delay
+            }}
+          >
+            ♥
+          </div>
+        ))}
+      </div>
+
       {data ? (
         <ViewMode data={data} />
       ) : (
         <CreateMode />
       )}
 
-      {/* Background Music - Spotify Embed */}
-      <div style={{
-        position: 'fixed',
-        bottom: '20px',
-        left: '20px',
-        zIndex: 1000,
-        width: '300px',
-        opacity: data ? 0.8 : 0.3,
-        transition: 'opacity 0.5s ease',
-        transform: 'scale(0.8)',
-        transformOrigin: 'bottom left'
-      }}>
+      {/* Background Music - YouTube Embed (Hidden) */}
+      <div style={{ position: 'fixed', bottom: '-100px', left: '-100px', pointerEvents: 'none', opacity: 0 }}>
         <iframe
-          style={{ borderRadius: '12px' }}
-          src="https://open.spotify.com/embed/track/4j5ffIFh7bFT7GZciP1TCy?utm_source=generator&theme=0&autoplay=1"
-          width="100%"
-          height="80"
+          id="youtube-bg-music"
+          width="1"
+          height="1"
+          src="https://www.youtube.com/embed/TlvFo3umL1c?autoplay=1&loop=1&playlist=TlvFo3umL1c"
+          title="YouTube video player"
           frameBorder="0"
-          allowFullScreen=""
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
         ></iframe>
       </div>
     </div>
@@ -54,4 +73,3 @@ function App() {
 }
 
 export default App
-
